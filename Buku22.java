@@ -3,6 +3,19 @@ public class Buku22 {
     String judul, pengarang;
     int halaman, stok, harga;
 
+    // Constructors
+    public Buku22() {
+
+    }
+
+    public Buku22(String jud, String pg, int hal, int stok, int har) {
+        judul = jud;
+        pengarang = pg;
+        halaman = hal;
+        this.stok = stok;
+        harga = har;
+    }
+
     void tampilInformasi() {
         System.out.println("Judul: " + judul);
         System.out.println("Pengarang: " + pengarang);
@@ -26,10 +39,12 @@ public class Buku22 {
 
     void restock(int jml) {
         stok += jml;
+        System.out.println(jml + " buku berhasil ditambahkan ke dalam stok.");
     }
 
     void gantiHarga(int hrg) {
         harga = hrg;
+        System.out.println("Harga buku berhasil diubah menjadi Rp " + harga);
     }
 
     public static void main(String[] args) {
@@ -44,6 +59,8 @@ public class Buku22 {
         buku1.terjual(5);
         buku1.tampilInformasi();
         buku1.terjual(10); // Tidak akan terjual karena stok tidak mencukupi
+        buku1.tampilInformasi();
+        buku1.restock(15); // Menambah stok sebanyak 15 buku
         buku1.tampilInformasi();
     }
 }
